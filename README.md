@@ -28,7 +28,7 @@ ReactDOM.render(<Slider />, container);
         <tr>
           <td>className</td>
           <td>String</td>
-          <td>rc-slider</td>
+          <td>ui-slider</td>
           <td>Additional css class for the root dom node</td>
         </tr>
         <tr>
