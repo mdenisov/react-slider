@@ -195,6 +195,7 @@ Slider.propTypes = {
 	max: React.PropTypes.number,
 	step: React.PropTypes.number,
 	value: React.PropTypes.number,
+	defaultValue: React.PropTypes.number,
 	onChange: React.PropTypes.func,
 };
 
