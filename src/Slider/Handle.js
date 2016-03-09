@@ -17,6 +17,5 @@ export default class Handle extends React.Component {
 }
 
 Handle.propTypes = {
-	offset: React.PropTypes.number,
 	value: React.PropTypes.number,
 };
