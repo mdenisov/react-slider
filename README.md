@@ -52,12 +52,12 @@ ReactDOM.render(<Slider />, container);
         <tr>
           <td>defaultValue</td>
           <td>number</td>
-          <td>0 or [0, 0]</td>
+          <td>0</td>
           <td>Set initial positions of handles. If range is `false`, the type of `defaultValue` should be `number`.</td>
         </tr>
         <tr>
           <td>value</td>
-          <td>number or [number, number]</td>
+          <td>number</td>
           <td></td>
           <td>Set current positions of handles. If range is `false`, the type of `defaultValue` should be `number`.</td>
         </tr>
