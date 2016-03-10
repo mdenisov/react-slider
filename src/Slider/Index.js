@@ -49,11 +49,13 @@ export default class Slider extends React.Component {
 		pauseEvent(e);
 
 		const position = this._getMousePosition(e);
-		this._addDocumentEvents();
-
 		const value = this._getValueByPosition(position);
-		this.startValue = value;
-		this.startPosition = position;
+
+		this.setState({
+			value: value
+		});
+
+		this._addDocumentEvents();
 	}
 
 	onMouseMove(e) {
