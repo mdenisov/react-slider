@@ -1,8 +1,8 @@
 @disabledColor: #ccc;
 @border-radius-base: 6px;
-@primary-color: #2db7f5;
-@ease-out-quint      : cubic-bezier(0.23, 1, 0.32, 1);
-@ease-in-quint       : cubic-bezier(0.755, 0.05, 0.855, 0.06);
+@track-color: #7dc257
+@ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+@ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
 
 .borderBox() {
 	box-sizing: border-box;
@@ -19,7 +19,7 @@
 	height: 2px;
 	width: 100%;
 	border-radius: @border-radius-base;
-	background: rgba(255, 255, 255, .5);
+	background: #d5d3d3;
 
 	.borderBox();
 
@@ -28,7 +28,7 @@
 		left: 0;
 		height: 2px;
 		border-radius: @border-radius-base;
-		background-color: #ffffff;
+		background-color: @track-color;
 		z-index: 1;
 	}
 
@@ -40,7 +40,7 @@
 		height: 10px;
 		cursor: pointer;
 		border-radius: 50%;
-		//border: solid 2px tint(@primary-color, 50%);
+		border: solid 2px @track-color;
 		background-color: #fff;
 		z-index: 2;
 
