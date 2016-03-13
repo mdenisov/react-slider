@@ -51,10 +51,10 @@ export default class Slider extends React.Component {
 		const position = this._getMousePosition(e);
 		const value = this._getValueByPosition(position);
 
-		this.setState({
-			value: value
-		});
+		this.startValue = value;
+		this.startPosition = position;
 
+		this.onMove(e, position);
 		this._addDocumentEvents();
 	}
 
@@ -73,15 +73,15 @@ export default class Slider extends React.Component {
 		const diffValue = diffPosition / this._getSliderLength() * (props.max - props.min);
 
 		const value = this._trimAlignValue(this.startValue + diffValue);
-		const oldValue = state[state.handle];
+		const oldValue = state.value;
 
 		if (value === oldValue) return;
 
 		this.setState({
 			value: value
+		}, function() {
+			this.onChange();
 		});
-
-		this.onChange();
 	}
 
 	onEnd(e) {
@@ -167,8 +167,7 @@ export default class Slider extends React.Component {
 
 	_getValueByPosition(position) {
 		const pixelOffset = position - this._getSliderStart();
-		const nextValue = this._trimAlignValue(this._calcValue(pixelOffset));
-		return nextValue;
+		return this._trimAlignValue(this._calcValue(pixelOffset));
 	}
 
 	_getSliderLength() {
@@ -197,8 +196,7 @@ Slider.propTypes = {
 	max: React.PropTypes.number,
 	step: React.PropTypes.number,
 	value: React.PropTypes.number,
-	defaultValue: React.PropTypes.number,
-	onChange: React.PropTypes.func,
+	onChange: React.PropTypes.func
 };
 
 Slider.defaultProps = {
